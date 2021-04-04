@@ -8,7 +8,8 @@ const exercisesRouter = require('./routes/exercises');
 const UsersRouter = require('./routes/users');
 
 
-app.use(cors());
+//app.use(cors());
+app.use(cors({origin: true, credentials: true}));
 app.use(express.json());
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
